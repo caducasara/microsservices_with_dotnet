@@ -1,0 +1,60 @@
+# Build results
+bin/
+obj/
+out/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# VS Code settings
+.vscode/
+
+# Rider settings
+.idea/
+
+# Visual Studio working folder
+.vs/
+
+# Auto-generated files
+Generated_Code/
+
+# NuGet
+*.nupkg
+packages/
+*.snupkg
+
+# ASP.NET secrets
+secrets.json
+
+# Environment variables
+.env
+
+# Local settings
+appsettings.Development.json
+
+# DotNet CLI tool settings
+.dotnet-tools.json
+
+# EF Migrations (optional: caso não queira versionar)
+Migrations/
+
+# Test results
+TestResults/
+
+# Coverage reports
+coverage/
+*.coverage
+*.coveragexml
+
+# Node modules (caso use frontend no mesmo projeto)
+node_modules/
