@@ -40,6 +40,13 @@ namespace VShop.ProductApi.Repositories
             return await _context.Products.ToListAsync();
         }
 
+        public async Task<IEnumerable<Product>> GetProductsByCategory(int categoryId)
+        {
+            return await _context.Products
+                                    .Where(p => p.CategoryId == categoryId)
+                                        .ToListAsync();
+        }
+
         public async Task<Product> GetProductById(int productId)
         {
             return await _context.Products

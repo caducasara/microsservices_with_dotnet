@@ -10,6 +10,7 @@ namespace VShop.ProductApi.Repositories
     {
         Task<IEnumerable<Product>> GetAll();
         Task<Product> GetProductById(int ProductId);
+        Task<IEnumerable<Product>> GetProductsByCategory(int categoryId);
         Task<Product> Create(Product Product);
         Task<Product> Update(Product Product);
         Task<Product> Delete(int ProductId);
