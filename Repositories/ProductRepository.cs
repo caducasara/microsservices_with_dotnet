@@ -37,7 +37,9 @@ namespace VShop.ProductApi.Repositories
 
         public async Task<IEnumerable<Product>> GetAll()
         {
-            return await _context.Products.ToListAsync();
+            return await _context.Products
+                            .Include(c => c.Category)
+                                .ToListAsync();
         }
 
         public async Task<IEnumerable<Product>> GetProductsByCategory(int categoryId)
@@ -50,8 +52,9 @@ namespace VShop.ProductApi.Repositories
         public async Task<Product> GetProductById(int productId)
         {
             return await _context.Products
-                            .Where(p => p.Id == productId)
-                                .FirstOrDefaultAsync();
+                            .Include(c => c.Category)
+                                .Where(p => p.Id == productId)
+                                    .FirstOrDefaultAsync();
         }
 
         public async Task<Product> Update(Product product)
