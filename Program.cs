@@ -1,3 +1,4 @@
+using System.Text.Json.Serialization;
 using Microsoft.EntityFrameworkCore;
 using VShop.ProductApi.Context;
 using VShop.ProductApi.Repositories;
@@ -31,7 +32,9 @@ builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<IProductService, ProductService>();
 
-builder.Services.AddControllers();
+builder.Services.AddControllers()
+                    .AddJsonOptions(x =>
+                        x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
 
 var app = builder.Build();
 
